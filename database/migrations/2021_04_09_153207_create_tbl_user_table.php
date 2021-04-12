@@ -22,6 +22,7 @@ class CreateTblUserTable extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('akses');
+            $table->timestamps();
         });
     }
 
