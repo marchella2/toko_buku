@@ -22,6 +22,7 @@ class CreateTblSettingLapTable extends Migration
             $table->string('logo');
             $table->string('no_hp');
             $table->string('email');
+            $table->timestamps();
         });
     }
 

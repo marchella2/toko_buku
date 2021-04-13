@@ -22,6 +22,7 @@ class CreateTblPenjualanTable extends Migration
             $table->integer('kembalian');
             $table->integer('total_harga');
             $table->date('tanggal');
+            $table->timestamps();
         });
     }
 

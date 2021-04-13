@@ -26,7 +26,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     Toko Buku
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -39,6 +39,12 @@
                         @if (Auth::user()->akses=='manager')
                             <li class="nav-item">
                                 <a href="{{ route('user.index') }}" class="nav-link">Data User</a>
+                            </li>
+                        @endif
+
+                        @if (Auth::user()->akses=='admin')
+                            <li class="nav-item">
+                                <a href="{{ route('distributor.index') }}" class="nav-link">Data Distributor</a>
                             </li>
                         @endif
                     </ul>

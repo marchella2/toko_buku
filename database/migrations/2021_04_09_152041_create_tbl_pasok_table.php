@@ -19,6 +19,7 @@ class CreateTblPasokTable extends Migration
             $table->bigInteger('id_buku');
             $table->integer('jumlah');
             $table->date('tanggal');
+            $table->timestamps();
         });
     }
 

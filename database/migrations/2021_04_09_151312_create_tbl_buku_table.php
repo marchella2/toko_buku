@@ -25,6 +25,7 @@ class CreateTblBukuTable extends Migration
             $table->integer('harga_jual');
             $table->integer('ppn');
             $table->integer('diskon');
+            $table->timestamps();
         });
     }
 
