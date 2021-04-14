@@ -1,3 +1,4 @@
+@section('title', 'Dashboard')
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -7,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dashboard</title>
+    <title>@yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -45,6 +46,9 @@
                         @if (Auth::user()->akses=='admin')
                             <li class="nav-item">
                                 <a href="{{ route('distributor.index') }}" class="nav-link">Data Distributor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('buku.index') }}" class="nav-link">Data Buku</a>
                             </li>
                         @endif
                     </ul>
