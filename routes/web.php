@@ -20,6 +20,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::resource('/user', 'UserController');
+Route::resource('/distributor', 'DistributorController');
+Route::resource('/buku', 'BukuController');
+Route::resource('/pasok', 'PasokController');
+
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
 
