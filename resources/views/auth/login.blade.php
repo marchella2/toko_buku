@@ -19,14 +19,6 @@
     <title>Login</title>
   </head>
   <body>
-
-    @if ($message = Session::get('error'))
-        <div class="alert alert-danger alert-block">
-            <button type="button" class="close" data-dismiss="alert">x</button>
-            <strong>{{ $message }}</strong>
-        </div>
-    @endif
-
   <div class="content">
     <div class="container">
       <div class="row">
@@ -56,6 +48,13 @@
               <input type="submit" value="Log In" class="btn btn-block btn-primary">
 
             </form>
+            <br>
+            @if ($message = Session::get('error'))
+                <div class="alert alert-danger alert-block">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+            @endif
             </div>
           </div>
 

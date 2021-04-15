@@ -9,6 +9,17 @@
     </div>
 
     <div class="content-body">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <h4>Error : </h4>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="{{ route('user.store') }}" method="POST">
         @csrf
             <div class="row">
@@ -30,7 +41,7 @@
                 <div class="form-group col-6">
                     <label for="status" class="form-label">Status</label>
                     <select name="status" class="form-control">
-                        <option>-- Pilih Status --</option>
+                        <option selected disabled>-- Pilih Status --</option>
                         <option value="aktif">Aktif</option>
                         <option value="tidak aktif">Tidak Aktif</option>
                     </select>
@@ -49,7 +60,7 @@
                 <div class="form-group col-4">
                     <label for="akses" class="form-label">Akses</label>
                     <select name="akses" class="form-control">
-                        <option>-- Pilih Hak Akses --</option>
+                        <option selected disabled>-- Pilih Hak Akses --</option>
                         <option value="admin">Admin</option>
                         <option value="kasir">Kasir</option>
                         <option value="manager">Manager</option>

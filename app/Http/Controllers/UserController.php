@@ -102,14 +102,14 @@ class UserController extends Controller
         ]);
 
         $users = User::findOrFail($id);
-        $cekusername = User::where('username', $request->username)->first();
+        $cekusername = User::where('username', $request->username)->where('id', '!=', $id)->first();
 
         if (!$cekusername)
         {
             $users->update($request->all());
             return redirect()->route('user.index', $id)->with('success', 'Data user berhasil diperbarui');
         }
-            return redirect()->route('user.index')->with('error', 'Mohon maaf, username ini sudah digunakan');
+        return redirect()->route('user.index')->with('error', 'Mohon maaf, username ini sudah digunakan');
     }
 
     /**

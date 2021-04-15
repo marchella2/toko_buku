@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
             'nama' => 'mps',
             'alamat' => 'bogor',
             'telpon' => '0852',
-            'status' => 'tidak aktif',
+            'status' => 'aktif',
             'username' => 'mps',
             'password' => bcrypt('12345'),
             'akses' => 'manager',
