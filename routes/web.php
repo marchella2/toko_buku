@@ -20,8 +20,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/user', 'UserController');
-Route::resource('/distributor', 'DistributorController');
-Route::resource('/buku', 'BukuController');
-Route::resource('/pasok', 'PasokController');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::group(['middleware' => ['akses:manager']], function() {
+        Route::resource('/user', 'UserController');
+    });
+
+    Route::group(['middleware' => ['akses:admin']], function() {
+        Route::resource('/distributor', 'DistributorController');
+        Route::resource('/buku', 'BukuController');
+        Route::resource('/pasok', 'PasokController');
+    });
+});
