@@ -24,3 +24,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/user', 'UserController');
 Route::resource('/distributor', 'DistributorController');
 Route::resource('/buku', 'BukuController');
+Route::resource('/pasok', 'PasokController');

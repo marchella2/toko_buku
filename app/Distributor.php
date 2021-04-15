@@ -11,4 +11,9 @@ class Distributor extends Model
    protected $fillable = [
        'nama_distributor', 'alamat', 'telpon'
     ];
+
+    public function Pasok()
+    {
+        return $this->hasMany(Pasok::class);
+    }
 }

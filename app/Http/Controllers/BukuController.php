@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Buku;
 use Illuminate\Http\Request;
 
-use function PHPSTORM_META\map;
 
 class BukuController extends Controller
 {

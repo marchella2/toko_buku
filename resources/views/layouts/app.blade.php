@@ -39,16 +39,19 @@
                     <ul class="navbar-nav mr-auto">
                         @if (Auth::user()->akses=='manager')
                             <li class="nav-item">
-                                <a href="{{ route('user.index') }}" class="nav-link">Data User</a>
+                                <a href="{{ route('user.index') }}" class="nav-link">Input User</a>
                             </li>
                         @endif
 
                         @if (Auth::user()->akses=='admin')
                             <li class="nav-item">
-                                <a href="{{ route('distributor.index') }}" class="nav-link">Data Distributor</a>
+                                <a href="{{ route('distributor.index') }}" class="nav-link">Input Distributor</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('buku.index') }}" class="nav-link">Data Buku</a>
+                                <a href="{{ route('buku.index') }}" class="nav-link">Input Buku</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('pasok.index') }}" class="nav-link">Input Pasok</a>
                             </li>
                         @endif
                     </ul>
@@ -62,6 +65,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a href="#" class="dropdown-item">Ubah Password</a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
