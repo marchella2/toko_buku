@@ -10,6 +10,16 @@
     </div>
 
     <div class="content-body">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <h4>Error : </h4>
+            <ul>
+                @foreach ($errors->all() as $item)
+                    <li>{{ $item }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
         <form action="{{ route('buku.store') }}" method="POST">
         @csrf
             <div class="row">
